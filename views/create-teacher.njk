@@ -1,0 +1,62 @@
+{% extends "layout.njk" %}
+
+{% block head %}
+
+    <title>Create - Estudy</title>
+    <link rel="stylesheet" href="/styles/create-teacher.css">
+
+{% endblock head %}
+
+{% block content %}
+
+    <div class="card">
+
+        <section class="avatar"></section>
+
+        <form class="details" method="POST" action="/teachers">
+            <h3>Details</h3>
+
+            <div class="item">
+                <div>Avatar</div>
+                <input type="url" name="avatar_url" placeholder="https://">
+            </div>
+
+            <div class="item">
+                <div>Teacher</div>
+                <input type="text" name="name" placeholder="Full name">
+            </div>
+
+            <div class="item">
+                <div>Date of birth</div>
+                <input type="date" name="birth">
+            </div>
+
+            <div class="item">
+                <div>Education level</div>
+                <select name="education_level" id="">
+                    <option value="Complete High School">Complete High School</option>
+                    <option value="Complete Higher Education">Complete Higher Education</option>
+                    <option value="Master's">Master's</option>
+                    <option value="Doctorate Degree">Doctorate degree</option>
+                </select>
+            </div>
+
+            <div class="item">
+                <div>Class type</div>
+                <input type="radio" name="class_type" value="Presential">
+                <label for="Presential">Presential</label>
+                <input type="radio" name="class_type" value="Distance">
+                <label for="Distance">Distance</label>
+            </div>
+
+            <div class="item">
+                <div>Occupation area</div>
+                <input type="text" name="occupation_area" placeholder="Ex.: Mathematics, Physics...">
+            </div>
+
+            <button type="submit">Enviar</button>
+        </form>
+
+    </div>
+
+{% endblock content %}
