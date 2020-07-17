@@ -16,16 +16,29 @@
 <div class="item">
     <div>Education level</div>
     <select name="education_level" id="">
-        <option value="Complete High School" {% if teacher.education_level === "Distance" %} selected {% endif %}>
+        <option 
+            value="highschool" 
+            {% if teacher.education_level === "Complete High School" %} selected {% endif %}
+        >
             Complete High School
         </option>
-        <option value="Complete Higher Education" {% if teacher.education_level === "Complete Higher Education" %} selected {% endif %}>
+        <option 
+            value="highereducation" 
+            {% if teacher.education_level === "Complete Higher Education" %} selected {% endif %}
+        >
             Complete Higher Education
         </option>
-        <option value="Master's" {% if teacher.education_level === "Master's" %} selected {% endif %}>
+        <option 
+            value="master" 
+            {% if teacher.education_level === "Master's" %} selected {% endif %}
+        >
             Master's
         </option>
-        <option value="Doctorate Degree" {% if teacher.education_level === "Doctorate Degree" %} selected {% endif %}>Doctorate degree
+        <option 
+            value="doctorate" 
+            {% if teacher.education_level === "Doctorate Degree" %} selected {% endif %}
+        >
+            Doctorate degree
         </option>
     </select>
 </div>
