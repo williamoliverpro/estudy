@@ -11,12 +11,22 @@
 
     <div class="card">
 
-        <section class="avatar"></section>
+        <section class="avatar" style=" background: url({{teacher.avatar_url}}) no-repeat center center / cover"></section>
 
-        <form class="details" method="POST" action="/teachers">
-            <h3>Edit</h3>
+        <section class="details">
+            <form action="/teachers?_method=PUT" method="POST">
+                <h3>Edit</h3>
 
-            {% include 'fields.njk' %}
+                {% include 'fields.njk' %}
+
+                <input type="hidden" name="id" value="{{teacher.id}}">
+
+            </form>
+            <form id="form-delete" action="/teachers?_method=DELETE" method="POST">
+                <input type="hidden" name="id" value="{{teacher.id}}">
+                <button type="submit">Delete</button>
+            </form>
+        </section>
 
     </div>
 

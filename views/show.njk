@@ -11,7 +11,7 @@
 
     <div class="card">
 
-        <section class="avatar" style="background: url(https://source.unsplash.com/user/erondu/320x200) no-repeat center center / cover"></section>
+        <section class="avatar" style="background: url({{teacher.avatar_url}}) no-repeat center center / cover"></section>
 
         <section class="details">
             <h3>Details</h3>
@@ -48,7 +48,7 @@
                 <div>{{teacher.created_at}}</div>
             </div>
 
-            <a href="/teachers/{{teacher.id}}/edit" class="button">Editar</a>
+            <a href="/teachers/{{teacher.id}}/edit" class="button">Edit</a>
         </section>
 
     </div>

@@ -96,8 +96,6 @@ header {
 .avatar {
     height: 100%;
     width: 320px;
-
-    background: url(https://source.unsplash.com/user/erondu/320x200) no-repeat center center / cover;
 }
 
 /* === DETAILS === */
@@ -177,4 +175,9 @@ button {
     color: white;
     font-weight: bold;
     text-transform: uppercase;
+}
+
+#form-delete button {
+    margin-top: 8px;
+    background-color: salmon;
 }
