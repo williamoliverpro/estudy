@@ -9,46 +9,34 @@
 
 {% block content %}
 
-    <div class="card">
+    <div class="card table-container">
 
-        <section class="avatar" style="background: url(https://source.unsplash.com/user/erondu/320x200) no-repeat center center / cover"></section>
+        <table>
+            <thead>
+                <tr>
+                    <th>Teachers</th>
+                    <th>Occupation</th>
+                    <th>Action</th>
+                </thead>
+                <tbody>
+                    {% for teacher in teachers %}
+                        <tr>
+                            <td>
+                                <span style="background: url({{teacher.avatar_url}}})"></span>
+                                {{teacher.name}}</td>
+                            <td>
+                                {% for occupation in teacher.occupation_area %}
+                                    <span>{{occupation}}</span>
+                                {% endfor %}
+                            </td>
+                            <td>
+                                <a href="/teachers/{{teacher.id}}">View</a>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
 
-        <section class="details">
-            <h3>Details</h3>
+        </div>
 
-            <div class="item">
-                <div>Teacher</div>
-                <div>{{teacher.name}}</div>
-            </div>
-
-            <div class="item">
-                <div>Age</div>
-                <div>{{teacher.age}}</div>
-            </div>
-
-            <div class="item">
-                <div>Education level</div>
-                <div>{{teacher.education_level}}</div>
-            </div>
-
-            <div class="item">
-                <div>Class type</div>
-                <div>{{teacher.class_type}}</div>
-            </div>
-
-            <div class="item">
-                <div>Monitoring</div>
-                {% for occupation in teacher.occupation_area %}
-                    <span>{{occupation}}</span>
-                {% endfor %}
-            </div>
-
-            <div class="item">
-                <div>Since</div>
-                <div>{{teacher.created_at}}</div>
-            </div>
-        </section>
-
-    </div>
-
-{% endblock content %}
+    {% endblock content %}

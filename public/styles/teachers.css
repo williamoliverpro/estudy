@@ -146,3 +146,71 @@ header {
     text-transform: uppercase;
     font-size: 12px;
 }
+
+/* ===TABLE=== */
+
+.table-container {
+    display: block;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+table {
+    width: 100%;
+    border-spacing: 0;
+}
+
+table thead th {
+    text-align: left;
+    text-transform: uppercase;
+    color: #777;
+    font-size: 14px;
+}
+
+th, td {
+    padding: 16px;
+    border-bottom: 1px solid #90e0ef;
+    align-items: center;
+}
+
+tbody tr:last-child td {
+    border-bottom: none;
+}
+
+thead th:last-child {
+    text-align: center;
+}
+
+tbody td:last-child {
+    text-align: center;
+}
+
+tbody td:last-child a {
+    background-color: #00b4d8;
+    padding: 8px 16px;
+    border-radius: 6px;
+    color: white;
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: bold;
+    text-decoration: none;
+    text-align: center;
+}
+
+tbody td:first-child {
+    display: grid;
+    grid-template-columns: 60px 1fr;
+}
+
+tbody td:first-child span {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-position: center;
+    background-size: cover;
+    border-color: 2px black;
+}
+
+tbody td:nth-child(2) {
+    
+}

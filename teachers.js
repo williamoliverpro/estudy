@@ -122,3 +122,8 @@ exports.delete = function(req, res) {
         return res.redirect(`/teachers`)
     })
 }
+
+exports.index = function (req, res) {
+
+    return res.render("teachers", {teachers: data.teachers})
+}
