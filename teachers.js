@@ -16,6 +16,7 @@ exports.post = function (req, res) {
 
     let { avatar_url, name, birth, education_level, class_type, occupation_area } = req.body
     birth = Date.parse(req.body.birth)
+    occupation_area = occupation_area.split(",")
     const created_at = Date.now()
     const id = Number(data.teachers.length + 1)
 
@@ -51,7 +52,6 @@ exports.show = function (req, res) {
         ...foundTeacher,
         age: age(foundTeacher.birth),
         education_level: graduation(foundTeacher.education_level),
-        occupation_area: foundTeacher.occupation_area.split(","),
         created_at: new Intl.DateTimeFormat("en-US").format(foundTeacher.created_at),
     }
 
@@ -84,10 +84,10 @@ exports.update = function (req, res) {
     const foundTeacher = data.teachers.find(function (teacher, foundIndex) {
         if (teacher.id == id) {
             index = foundIndex
-            
+
             return true
-            }
         }
+    }
     )
 
     if (!foundTeacher) {
@@ -109,7 +109,7 @@ exports.update = function (req, res) {
     })
 }
 
-exports.delete = function(req, res) {
+exports.delete = function (req, res) {
     const { id } = req.body
 
     const filteredTeachers = data.teachers.filter((teacher) => teacher.id != id)
@@ -125,5 +125,5 @@ exports.delete = function(req, res) {
 
 exports.index = function (req, res) {
 
-    return res.render("teachers", {teachers: data.teachers})
+    return res.render("teachers", { teachers: data.teachers })
 }

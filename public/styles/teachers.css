@@ -214,3 +214,16 @@ tbody td:first-child span {
 tbody td:nth-child(2) {
     
 }
+
+.occupation {
+    padding: 8px 16px;
+    background-color: #5555;
+    border-radius: 16px;
+    color: #777;
+    margin-right: 4px;
+    margin-top: 8px;
+    display: inline-block;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 12px;
+}
